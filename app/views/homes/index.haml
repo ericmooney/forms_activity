@@ -1,0 +1,13 @@
+%table
+  %tr
+    %th Name
+    %th Age
+    %th Bio
+    %th Favorite Color
+
+  %tr
+    - @users.each do |user|
+      %td= user.name
+      %td= user.age
+      %td= user.bio
+      %td= user.favorite_color
