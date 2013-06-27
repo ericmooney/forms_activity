@@ -1,11 +1,11 @@
 FormsActivity::Application.routes.draw do
   get "/guests/new" => 'guests#new'
-  post "/guests" => 'guests#create'
+  post "/guests/create" => 'guests#create'
 
-  get "/guests/:id/edit" => 'guests#edit'
-  put "/guests/:id" => 'guests#update'
+  get "/guests/:guest_id/edit" => 'guests#edit'
+  put "/guests/:guest_id" => 'guests#update'
 
-  put "/guests/:id" =>'guests#show'
+  get "/guests/:guest_id/change" => 'guests#change'
 
   root :to => 'homes#index'
 

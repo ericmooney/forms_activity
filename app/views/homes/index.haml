@@ -1,13 +1,17 @@
-%table
-  %tr
-    %th Name
-    %th Age
-    %th Bio
-    %th Favorite Color
+%h1 Viewing All Users
 
-  %tr
+%table
+  %thead
+    %tr
+      %th Name
+      %th Age
+      %th Bio
+      %th Favorite Color
+
+  %tbody
     - @users.each do |user|
-      %td= user.name
-      %td= user.age
-      %td= user.bio
-      %td= user.favorite_color
+      %tr
+        %td= user.name
+        %td= user.age
+        %td= user.bio
+        %td= user.favorite_color
