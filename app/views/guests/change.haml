@@ -1,0 +1,20 @@
+%h1 Viewing All Users
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Age
+      %th Bio
+      %th Favorite Color
+      %th
+
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.name
+        %td= user.age
+        %td= user.bio
+        %td= user.favorite_color
+        %td
+          = link_to("Change color", "/guests/#{user.id}/change/orange", :method => "put")

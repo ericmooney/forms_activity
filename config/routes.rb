@@ -3,9 +3,10 @@ FormsActivity::Application.routes.draw do
   post "/guests/create" => 'guests#create'
 
   get "/guests/:guest_id/edit" => 'guests#edit'
-  put "/guests/:guest_id" => 'guests#update'
+  put "/guests/:guest_id/update" => 'guests#update'
 
   get "/guests/:guest_id/change" => 'guests#change'
+  put "/guests/:guest_id/change/:color" => 'guests#set_color'
 
   root :to => 'homes#index'
 

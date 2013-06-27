@@ -15,17 +15,32 @@ class GuestsController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:guest_id])
+    @colors = [
+      "blue",
+      "red",
+      "green",
+      "yellow",
+    ]
 
   end
 
   def update
-
+    @user = User.find(params[:guest_id])
+    @user.update_attributes(params[:user])
+    redirect_to root_path
   end
 
   def change
-    # @color = User.find(params[:favorite_color])
-    # this will come in from the URL
+    @users = User.all
   end
+
+  def set_color
+    @user = User.find(params[:guest_id])
+    @user.update_attribute("favorite_color", params[:color])
+    redirect_to root_path
+  end
+
 
 
 end
